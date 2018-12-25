@@ -1,0 +1,147 @@
+@import './variables';
+
+.app {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  color: #333;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 130px;
+  height: 50px;
+}
+
+.legend-container {
+  position: absolute;
+  width: 400px;
+  display: flex;
+  right: 10px;
+  top: 10px;
+
+  @media #{$small-and-down} {
+    width: 200px;
+  }
+
+  .legend {
+    flex: 1 1;  
+  }
+
+  .legend-indicator {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 100%;
+
+    @media #{$small-and-down} {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &.success {
+      background: $success-color;
+    }
+
+    &.pending {
+      background: $pending-color;
+    }
+
+    &.failed {
+      background: $failed-color;
+    }
+
+    &.refund {
+      background: $refund-color;
+    }
+  }
+
+  .legend-desc {
+    display : inline-block;
+    padding: 0 10px;
+    vertical-align: middle;
+
+    @media #{$small-and-down} {
+      display: block;
+      text-align: center;
+      padding: 5px 0;
+    }
+  }
+}
+
+.app-container {
+  background: #fff;
+  border-radius: 5px;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
+            0 2px 4px 0 rgba(0,0,0,0.08);
+
+}
+
+.header-container {
+  height: $header-height;
+  font-size: 1.4rem;
+  padding: 20px 20px 0 20px;
+  display: flex;
+
+  @media #{$small-and-down} {
+    display: block;
+    font-size: 1.1rem;
+  }
+  
+  .h-left,
+  .h-right {
+      color: #78909C;
+      flex: 1;
+
+      @media #{$small-and-down} {
+        flex: none;
+        width: 50%;
+        display: inline-block;
+        margin: 20px 0;
+      }
+  }
+
+  .h-left {
+      text-align: left;
+  }
+
+  .h-right {
+      text-align: right;
+  }
+
+  .h-currency {
+    font-size: .8rem;
+    color: #492c2c;
+  }
+
+  .h-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    @media #{$small-and-down} {
+      width: 100%;
+      display: block;
+      margin: 0;
+    }
+  }
+}
+
+.body-container {
+  height: calc(100% - #{$header-height} - 40px); //40px is padding
+  overflow: auto;
+  padding: 0 20px;
+
+  @media #{$small-and-down} {
+    height: calc(100% - #{$header-height} - 80px); //40px is padding & margin
+    margin: 60px 0 0 0;
+  }
+}
+

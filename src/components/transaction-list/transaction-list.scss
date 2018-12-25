@@ -1,0 +1,62 @@
+@import '../../variables';
+
+.t-list-wrapper {
+    display: inline-grid;
+    grid-template-columns: 50px 1fr 1fr;
+    width: 100%;
+    padding: 20px 0;
+    .t-l-icon {
+        width: 30px;
+        height: 100%;
+        font-size: 1.3rem;
+        margin: auto;
+    }
+    .t-l-left {
+        text-align: left;
+        padding: 0 20px;
+    }
+    .t-l-right {
+        text-align: right;
+        padding: 0 0 0 20px;
+
+        &.success {
+            color: $success-color;
+        }
+
+        &.pending {
+            color: $pending-color;
+        }
+
+        &.failed {
+            color: $failed-color;
+        }
+
+        &.refund {
+            color: $refund-color;
+        }
+    }
+    .t-l-desc {
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    .t-l-status {
+        font-size: 1rem;
+        color: #787878;
+        padding: 5px 0
+    }
+
+    .t-l-amount {
+        font-size: 1.05rem;
+    }
+
+    .t-l-amount-span {
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0 10px;
+    }
+
+    .t-l-currency {
+        font-size: .8rem;
+        color: #787878;
+    }
+}
